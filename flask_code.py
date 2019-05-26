@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def user():   
-    return "Please work"
+    return request.method
     
 if __name__ == "__main__":
     app.run(debug=True)
