@@ -5,7 +5,7 @@ Created on Sun May 26 23:41:58 2019
 @author: eupho
 """
 
-from flask import Flask, jsonify , make_response
+from flask import Flask, jsonify ,json, make_response
 from flask import request
 
 app = Flask(__name__)
@@ -22,10 +22,10 @@ def results():
     text = {}
     text['facebook'] = {}
     text['facebook']['attachment'] = {}
-    text['facebook']['attachment']['type'] = 'template'
+    text['facebook']['attachment']['type'] = "template"
     text['facebook']['attachment']['payload'] = {}
-    text['facebook']['attachment']['payload']['template_type'] = 'button'
-    text['facebook']['attachment']['payload']['text'] = 'Available Service Centers'
+    text['facebook']['attachment']['payload']['template_type'] = "button"
+    text['facebook']['attachment']['payload']['text'] = "Available Service Centers"
     text['facebook']['attachment']['payload']['buttons'] = [None] * 2
     text['facebook']['attachment']['payload']['buttons'][0] = {}
     text['facebook']['attachment']['payload']['buttons'][0]['type'] = 'postback'
@@ -50,7 +50,7 @@ def results():
 def webhook():
 
     # return response
-    return make_response(jsonify(results()))
+    return make_response(json.dumps(results()))
 	
 if __name__ == "__main__":
     app.run(debug=True)
