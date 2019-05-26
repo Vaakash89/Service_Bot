@@ -18,10 +18,14 @@ def results():
     # build a request object
     req = request.get_json()
     # fetch action from json
-    action = req["responseId"]
+    action = req["queryResult"]["queryText"]
+    if(action.lower() == "chennai" ):
+        text = '{"facebook": {"attachment": {"type": "template","payload": {"template_type": "button","text": "Availabler Service Centers","buttons": [{"type": "postback","payload": "XYZ Car Comp","title": "XYZ Car Comp"},{"type": "postback","payload": "ABC Car Care","title": "ABC Car Care"}]}}}}'
+    else:
+        text = "Not Chennai"
     
     # return a fulfillment response
-    return {'fulfillmentText': 'This is a response from webhook.'}
+    return text
 	
 	
 	
