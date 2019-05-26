@@ -16,5 +16,3 @@ app = Flask(__name__)
 def user():   
     return request.method
     
-if __name__ == "__main__":
-    app.run(debug=True)

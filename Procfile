@@ -1,2 +1,2 @@
-web: python flask_code.py
+web: gunicorn flask_code:app
 heroku ps:scale web=1
