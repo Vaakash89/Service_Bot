@@ -19,13 +19,29 @@ def results():
     req = request.get_json()
     # fetch action from json
     action = req["queryResult"]["queryText"]
+    text = {}
+    text['facebook'] = {}
+    text['facebook']['attachment'] = {}
+    text['facebook']['attachment']['type'] = 'template'
+    text['facebook']['attachment']['payload'] = {}
+    text['facebook']['attachment']['payload']['template_type'] = 'button'
+    text['facebook']['attachment']['payload']['text'] = 'Available Service Centers'
+    text['facebook']['attachment']['payload']['buttons'] = [None] * 2
+    text['facebook']['attachment']['payload']['buttons'][0] = {}
+    text['facebook']['attachment']['payload']['buttons'][0]['type'] = 'postback'
+    text['facebook']['attachment']['payload']['buttons'][0]['payload'] = 'XYZ Car Comp'
+    text['facebook']['attachment']['payload']['buttons'][0]['title'] = 'XYZ Car Comp'
+    text['facebook']['attachment']['payload']['buttons'][1] = {}
+    text['facebook']['attachment']['payload']['buttons'][1]['type'] = 'postback'
+    text['facebook']['attachment']['payload']['buttons'][1]['payload'] = 'ABC Car Care'
+    text['facebook']['attachment']['payload']['buttons'][1]['title'] = 'ABC Car Care'
     if(action.lower() == "chennai" ):
-        text = '{"facebook": {"attachment": {"type": "template","payload": {"template_type": "button","text": "Availabler Service Centers","buttons": [{"type": "postback","payload": "XYZ Car Comp","title": "XYZ Car Comp"},{"type": "postback","payload": "ABC Car Care","title": "ABC Car Care"}]}}}}'
+        res = text
     else:
-        text = "Not Chennai"
+        res = "Not Chennai"
     
     # return a fulfillment response
-    return text
+    return res
 	
 	
 	
