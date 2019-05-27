@@ -33,9 +33,25 @@ def results():
               ],
               "payload": {
                 "facebook": {
-                    "attachment": {
-                    
-                    }
+                     "attachment": {
+                          "type": "template",
+                          "payload": {
+                            "template_type": "button",
+                            "text": "Availabler Service Centers",
+                            "buttons": [
+                              {
+                                "type": "postback",
+                                "payload": "XYZ Car Comp",
+                                "title": "XYZ Car Comp"
+                              },
+                              {
+                                "type": "postback",
+                                "payload": "ABC Car Care",
+                                "title": "ABC Car Care"
+                              }
+                            ]
+                          }
+                        }
                 }      
             }
         }
