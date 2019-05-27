@@ -20,21 +20,24 @@ def results():
     # fetch action from json
     action = req["queryResult"]["queryText"]
     text = {}
-    text['facebook'] = {}
-    text['facebook']['attachment'] = {}
-    text['facebook']['attachment']['type'] = "template"
-    text['facebook']['attachment']['payload'] = {}
-    text['facebook']['attachment']['payload']['template_type'] = "button"
-    text['facebook']['attachment']['payload']['text'] = "Available Service Centers"
-    text['facebook']['attachment']['payload']['buttons'] = [None] * 2
-    text['facebook']['attachment']['payload']['buttons'][0] = {}
-    text['facebook']['attachment']['payload']['buttons'][0]['type'] = 'postback'
-    text['facebook']['attachment']['payload']['buttons'][0]['payload'] = 'XYZ Car Comp'
-    text['facebook']['attachment']['payload']['buttons'][0]['title'] = 'XYZ Car Comp'
-    text['facebook']['attachment']['payload']['buttons'][1] = {}
-    text['facebook']['attachment']['payload']['buttons'][1]['type'] = 'postback'
-    text['facebook']['attachment']['payload']['buttons'][1]['payload'] = 'ABC Car Care'
-    text['facebook']['attachment']['payload']['buttons'][1]['title'] = 'ABC Car Care'
+    text['fulfillmentText'] = 'This is a response from webhook.'
+    text['fulfillmentMessages'] = [None]*1
+    text['fulfillmentMessages'][0] = {}
+    text['fulfillmentMessages'][0]['facebook'] = {}
+    text['fulfillmentMessages'][0]['facebook']['attachment'] = {}
+    text['fulfillmentMessages'][0]['facebook']['attachment']['type'] = 'template'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload'] = {}
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['template_type'] = 'button'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['text'] = 'Available Service Centers'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'] = [None] * 2
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][0] = {}
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][0]['type'] = 'postback'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][0]['payload'] = 'XYZ Car Comp'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][0]['title'] = 'XYZ Car Comp'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][1] = {}
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][1]['type'] = 'postback'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][1]['payload'] = 'ABC Car Care'
+    text['fulfillmentMessages'][0]['facebook']['attachment']['payload']['buttons'][1]['title'] = 'ABC Car Care'
     if(action.lower() == "chennai" ):
         res = text
     else:
