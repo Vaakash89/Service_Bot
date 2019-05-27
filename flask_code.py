@@ -14,46 +14,30 @@ def results():
     action = req["queryResult"]["queryText"]
     text = {
               "fulfillmentText": "This is a text response",
-              "fulfillmentMessages": [
-                {
-                  "card": {
-                    "title": "Available Service Centres",
-                    "buttons": [
-                      {
-                        "postback": "XYZ Car Comp",
-                        "text": "XYZ Car Comp"
-                      },
-                      {
-                        "postback": "ABC Car Care",
-                        "text": "ABC Car Care"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "payload": {
-                "facebook": {
-                     "attachment": {
-                          "type": "template",
-                          "payload": {
-                            "template_type": "button",
-                            "text": "Availabler Service Centers",
-                            "buttons": [
-                              {
-                                "type": "postback",
-                                "payload": "XYZ Car Comp",
-                                "title": "XYZ Car Comp"
-                              },
-                              {
-                                "type": "postback",
-                                "payload": "ABC Car Care",
-                                "title": "ABC Car Care"
-                              }
-                            ]
-                          }
-                        }
-                }      
-            }
+              "fulfillmentMessages": [],
+                                  "payload": {
+                                    "facebook": {
+                                         "attachment": {
+                                              "type": "template",
+                                              "payload": {
+                                                "template_type": "button",
+                                                "text": "Availabler Service Centers",
+                                                "buttons": [
+                                                  {
+                                                    "type": "postback",
+                                                    "payload": "XYZ Car Comp",
+                                                    "title": "XYZ Car Comp"
+                                                  },
+                                                  {
+                                                    "type": "postback",
+                                                    "payload": "ABC Car Care",
+                                                    "title": "ABC Car Care"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                    }      
+                                }
         }
     
     if(action.lower() == "chennai" ):
