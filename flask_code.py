@@ -21,16 +21,17 @@ def results():
                     "buttons": [
                       {
                         "postback": "XYZ Car Comp",
-                        "text": "XYZ Car Comp"
+                        "title": "XYZ Car Comp"
                       },
                       {
                         "postback": "ABC Car Care",
-                        "text": "ABC Car Care"
+                        "title": "ABC Car Care"
                       }
                     ]
                   }
                 }
-              ]
+              ],
+                    
             }
     
     if(action.lower() == "chennai" ):
