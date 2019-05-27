@@ -22,9 +22,8 @@ def results():
                     "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
                     "buttons": [
                       {
-                        "type": "postback",
-                        "payload": "XYZ Car Comp",
-                        "title": "XYZ Car Comp"
+                        "postback": "XYZ Car Comp",
+                        "text": "XYZ Car Comp"
                       }
                     ]
                   }
