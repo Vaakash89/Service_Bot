@@ -33,16 +33,19 @@ def results():
               ],
               "payload": {
                 "facebook": {
-                            "buttons": [
-                                      {
-                                        "postback": "XYZ1 Car Comp",
-                                        "text": "XYZ Car Comp"
-                                      },
-                                      {
-                                        "postback": "ABC Car Care",
-                                        "text": "ABC Car Care"
-                                      }
-                                    ]
+                            "card": {
+                                "title": "Available Service Centres",
+                                "buttons": [
+                                  {
+                                    "postback": "XYZ Car Comp",
+                                    "text": "XYZ Car Comp"
+                                  },
+                                  {
+                                    "postback": "ABC Car Care",
+                                    "text": "ABC Car Care"
+                                  }
+                                ]
+                              }
                             }      
             }
         }
