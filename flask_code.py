@@ -21,18 +21,22 @@ def results():
                     "buttons": [
                       {
                         "postback": "XYZ Car Comp",
-                        "title": "XYZ Car Comp"
+                        "text": "XYZ Car Comp"
                       },
                       {
                         "postback": "ABC Car Care",
-                        "title": "ABC Car Care"
+                        "text": "ABC Car Care"
                       }
                     ]
                   }
                 }
               ],
-                    
+              "payload": {
+                "facebook": {
+                            "text": "Hello, Facebook!"
+                            }      
             }
+        }
     
     if(action.lower() == "chennai" ):
         res = text
