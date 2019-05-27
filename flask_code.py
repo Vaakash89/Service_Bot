@@ -16,10 +16,8 @@ def results():
               "fulfillmentText": "This is a text response",
               "fulfillmentMessages": [
                 {
-                  "card": {
+                  "payload": {
                     "title": "card title",
-                    "subtitle": "card text",
-                    "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
                     "buttons": [
                       {
                         "postback": "XYZ Car Comp",
