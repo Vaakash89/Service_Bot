@@ -44,7 +44,7 @@ def results():
 def webhook():
 
     # return response
-    return make_response(json.dumps(results()))
+    return make_response(jsonify(results()))
 	
 if __name__ == "__main__":
     app.run(debug=True)
