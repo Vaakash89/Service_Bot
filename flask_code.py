@@ -16,7 +16,7 @@ def results():
               "fulfillmentText": "This is a text response",
               "fulfillmentMessages": [
                 {
-                  "payload": {
+                  "card": {
                     "title": "card title",
                     "buttons": [
                       {
