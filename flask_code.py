@@ -33,7 +33,16 @@ def results():
               ],
               "payload": {
                 "facebook": {
-                            "text": "Hello, Facebook!"
+                            "buttons": [
+                                      {
+                                        "postback": "XYZ1 Car Comp",
+                                        "text": "XYZ Car Comp"
+                                      },
+                                      {
+                                        "postback": "ABC Car Care",
+                                        "text": "ABC Car Care"
+                                      }
+                                    ]
                             }      
             }
         }
