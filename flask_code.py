@@ -8,7 +8,7 @@ app.config['JSON_SORT_KEYS'] = False
 
 def results():
 	
-    MONGO_URI = os.environ.get('MONGO_URI')
+    MONGO_URI = os.environ.get('MONGODB_URI')
     # build a request object
     req = request.get_json()
     # fetch action from json
