@@ -10,6 +10,8 @@ app = Flask(__name__)
 app.config['MONGO_URI'] = MONGO_URI
 #@app.route('/users/<user_id>', methods = ['GET', 'POST', 'DELETE'])
 
+mongo = PyMongo(app)
+
 def results():
 	
 
