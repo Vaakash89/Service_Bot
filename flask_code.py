@@ -1,20 +1,13 @@
 from flask import Flask, jsonify ,json, make_response
 from flask import request
-from flask.ext.pymongo import PyMongo
-import os
-
-#MONGO_URI = os.environ.get('MONGODB_URI')
 
 app = Flask(__name__)
-#app.config['MONGO_URI'] = MONGO_URI
 app.config['JSON_SORT_KEYS'] = False
 #@app.route('/users/<user_id>', methods = ['GET', 'POST', 'DELETE'])
 
-#mongo = PyMongo(app)
-
 def results():
 	
-    
+
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -33,7 +26,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": "Yo"
+                                                    "title": "XYZ Car Comp"
                                                   },
                                                   {
                                                     "type": "postback",
