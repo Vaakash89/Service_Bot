@@ -3,7 +3,7 @@ from flask import request
 from flask.ext.pymongo import PyMongo
 import os
 
-MONGO_URI = os.environ.get('MONGODB_URI')
+#MONGO_URI = os.environ.get('MONGODB_URI')
 
 app = Flask(__name__)
 #app.config['MONGO_URI'] = MONGO_URI
