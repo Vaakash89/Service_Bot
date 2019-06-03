@@ -9,6 +9,7 @@ app.config['JSON_SORT_KEYS'] = False
 def results():
 	
     MONGO_URI = os.environ.get('MONGODB_URI')
+    db = MONGO_URI.getCollection("Service_centers")
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -27,7 +28,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": MONGO_URI
+                                                    "title": db
                                                   },
                                                   {
                                                     "type": "postback",
