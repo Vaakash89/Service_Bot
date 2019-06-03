@@ -1,6 +1,7 @@
 from flask import Flask, jsonify ,json, make_response
 from flask import request
 import os
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -9,7 +10,8 @@ app.config['JSON_SORT_KEYS'] = False
 def results():
 	
     MONGO_URI = os.environ.get('MONGODB_URI')
-    db = MONGO_URI.getCollection("Service_centers")
+    client = MongoClient(MONGO_URI)
+    db = client.Service_centers
     # build a request object
     req = request.get_json()
     # fetch action from json
