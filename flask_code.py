@@ -1,7 +1,6 @@
 from flask import Flask, jsonify ,json, make_response
 from flask import request
 from flask.ext.pymongo import PyMongo
-import os
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
