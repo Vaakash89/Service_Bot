@@ -33,7 +33,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": MONGO_URI
+                                                    "title": str(mongo)
                                                   },
                                                   {
                                                     "type": "postback",
