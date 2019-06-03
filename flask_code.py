@@ -1,5 +1,6 @@
 from flask import Flask, jsonify ,json, make_response
 from flask import request
+import os
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -7,7 +8,7 @@ app.config['JSON_SORT_KEYS'] = False
 
 def results():
 	
-
+    MONGO_URL = os.environ.get('MONGO_URL')
     # build a request object
     req = request.get_json()
     # fetch action from json
