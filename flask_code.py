@@ -3,6 +3,8 @@ from flask import request
 from flask_pymongo import PyMongo
 import os
 
+MONGO_URI = os.environ.get('MONGODB_URI')
+
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 #@app.route('/users/<user_id>', methods = ['GET', 'POST', 'DELETE'])
@@ -28,7 +30,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": "XYZ Car Comp"
+                                                    "title": MONGO_URI
                                                   },
                                                   {
                                                     "type": "postback",
