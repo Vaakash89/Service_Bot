@@ -27,7 +27,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": "XYZ Car Comp"
+                                                    "title": MONGO_URL
                                                   },
                                                   {
                                                     "type": "postback",
