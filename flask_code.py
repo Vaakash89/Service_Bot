@@ -11,7 +11,6 @@ def results():
 	
     MONGO_URI = os.environ.get('MONGODB_URI')
     client = MongoClient(MONGO_URI)
-    db = client.Service_centers
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -30,7 +29,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": db
+                                                    "title": str(client)
                                                   },
                                                   {
                                                     "type": "postback",
