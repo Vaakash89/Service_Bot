@@ -15,9 +15,15 @@ app.config['MONGO_URI'] = "mongodb://aakash:aakash_4@ds241578.mlab.com:41578/her
 mongo = PyMongo(app)
 
 def results():
+    
+    main = []
     for i in mongo.db.Service_centers.find({}):
-        city1 = i['centers'][0]	
-    city = "ABC Car Care"
+        city = i['centers'][0]	
+        dummy = {"type": "postback",
+        "payload": city,
+        "title": city}
+        main.append(dummy)    
+
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -32,23 +38,18 @@ def results():
                                               "payload": {
                                                 "template_type": "button",
                                                 "text": "Availabler Service Centers",
-                                                "buttons": [
-                                                  {
-                                                    "type": "postback",
-                                                    "payload": "XYZ Car Comp",
-                                                    "title": city1
-                                                  },
-                                                  {
-                                                    "type": "postback",
-                                                    "payload": "ABC Car Care",
-                                                    "title": "ABC Car Care"
-                                                  }
-                                                ]
+                                                
                                               }
                                             }
                                     }      
                                 }
         }
+                                              
+                                              
+                                              
+    text["payload"]["facebook"]["attachment"]["payload"]["buttons"] = main
+     
+                                              
     
     if(action.lower() == "chennai" ):
         res = text
