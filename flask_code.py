@@ -36,7 +36,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": city
+                                                    "title": city1
                                                   },
                                                   {
                                                     "type": "postback",
