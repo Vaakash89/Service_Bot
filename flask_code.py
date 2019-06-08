@@ -38,7 +38,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": db.Service_centers.find({})
+                                                    "title": city
                                                   },
                                                   {
                                                     "type": "postback",
