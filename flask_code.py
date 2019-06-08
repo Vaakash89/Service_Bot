@@ -34,7 +34,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": mongo.db. Service_centers.find({"city": "chennai"})
+                                                    "title": mongo.db.Service_centers.find({"city": "chennai"})
                                                   },
                                                   {
                                                     "type": "postback",
