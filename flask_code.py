@@ -33,7 +33,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": mongo.heroku_g42lh6sd.Service_centers.find({}) 
+                                                    "title": mongo.Service_centers.find({}) 
                                                   },
                                                   {
                                                     "type": "postback",
