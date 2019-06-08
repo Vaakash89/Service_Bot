@@ -13,13 +13,9 @@ app.config['MONGO_URI'] = MONGO_URI
 
 mongo = PyMongo(app)
 
-
-
-
 def results():
 	
-    for i in mongo.db.Service_centers.find({}):
-        city = i['centers'][0]
+    city = "ABC Car Care"
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -38,7 +34,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": "chennai"
+                                                    "title": city
                                                   },
                                                   {
                                                     "type": "postback",
