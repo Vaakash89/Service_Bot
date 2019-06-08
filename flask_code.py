@@ -7,15 +7,19 @@ MONGO_URI = os.environ.get('MONGODB_URI')
 
 app = Flask(__name__)
 #app.config['JSON_SORT_KEYS'] = False
-#app.config['MONGO_URI'] = MONGO_URI
-app.config['MONGO_URI'] = "mongodb://aakash:aakash_4@ds241578.mlab.com:41578/heroku_g42lh6sd"
+app.config['MONGO_URI'] = MONGO_URI
+#app.config['MONGO_URI'] = "mongodb://aakash:aakash_4@ds241578.mlab.com:41578/heroku_g42lh6sd"
 #@app.route('/users/<user_id>', methods = ['GET', 'POST', 'DELETE'])
 
 mongo = PyMongo(app)
 
+
+
+
 def results():
 	
-
+    for i in mongo.db.Service_centers.find({}):
+        city = i['centers'][0]
     # build a request object
     req = request.get_json()
     # fetch action from json
@@ -34,7 +38,7 @@ def results():
                                                   {
                                                     "type": "postback",
                                                     "payload": "XYZ Car Comp",
-                                                    "title": db.Service_centers.find({"city": "chennai"})
+                                                    "title": db.Service_centers.find({})
                                                   },
                                                   {
                                                     "type": "postback",
