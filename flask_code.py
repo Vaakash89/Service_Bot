@@ -19,7 +19,7 @@ def results():
     main = []
     j = mongo.db.Service_centers.find({})
     for i in j['centers']:
-        city = i[0]	
+        city = i
         dummy = {"type": "postback",
         "payload": city,
         "title": city}
