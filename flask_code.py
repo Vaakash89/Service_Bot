@@ -52,8 +52,8 @@ def results():
                                               
     if not main:
         text = {
-              "fulfillmentText": "This is a text response",
-              "fulfillmentMessages": ["Sorry we dont serve in your city yet!"]
+              "fulfillmentText": "Sorry we dont serve in your city yet!",
+              "fulfillmentMessages": []
               }
     else:
         text["payload"]["facebook"]["attachment"]["payload"]["buttons"] = main
