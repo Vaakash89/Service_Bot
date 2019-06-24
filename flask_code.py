@@ -16,9 +16,11 @@ mongo = PyMongo(app)
 
 def results():
     
+    action = req["queryResult"]["queryText"]   
+    
     main = []
     for i in mongo.db.Service_centers.find({}):
-        if(i['city'] == 'Chennai'):
+        if(i['city'].lower() == action.lower()):
             city = i['centers'][0]
             dummy = {"type": "postback",
                      "payload": city,
@@ -28,7 +30,7 @@ def results():
     # build a request object
     req = request.get_json()
     # fetch action from json
-    action = req["queryResult"]["queryText"]
+
     text = {
               "fulfillmentText": "This is a text response",
               "fulfillmentMessages": [],
