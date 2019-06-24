@@ -22,7 +22,7 @@ def results():
     main = []
     for i in mongo.db.Service_centers.find({}):
         if(i['city'].lower() == action.lower()):
-            for j in range(0,len(i['city'])):
+            for j in range(0,len(i['centers'])):
                 city = i['centers'][j]
                 dummy = {"type": "postback",
                          "payload": city,
