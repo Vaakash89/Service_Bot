@@ -17,8 +17,9 @@ mongo = PyMongo(app)
 def results():
     
     main = []
-    for i in mongo.db.Service_centers.find({}):
-        city = i['centers'][0]	
+    j = mongo.db.Service_centers.find({})
+    for i in j['centers']:
+        city = i[0]	
         dummy = {"type": "postback",
         "payload": city,
         "title": city}
