@@ -22,11 +22,12 @@ def results():
     main = []
     for i in mongo.db.Service_centers.find({}):
         if(i['city'].lower() == action.lower()):
-            city = i['centers'][0]
-            dummy = {"type": "postback",
-                     "payload": city,
-                     "title": city}
-            main.append(dummy)    
+            for j in range(0,len(i['city'])):
+                city = i['centers'][j]
+                dummy = {"type": "postback",
+                         "payload": city,
+                         "title": city}
+                main.append(dummy)    
 
     # build a request object
 
