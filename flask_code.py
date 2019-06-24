@@ -18,11 +18,12 @@ def results():
     
     main = []
     for i in mongo.db.Service_centers.find({}):
-        city = i['centers'][0]
-        dummy = {"type": "postback",
-                 "payload": city,
-                 "title": city}
-        main.append(dummy)    
+        if(i['city'] == 'Chennai'):
+            city = i['centers'][0]
+            dummy = {"type": "postback",
+                     "payload": city,
+                     "title": city}
+            main.append(dummy)    
 
     # build a request object
     req = request.get_json()
