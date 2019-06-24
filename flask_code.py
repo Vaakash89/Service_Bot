@@ -50,9 +50,10 @@ def results():
                                 }
         }
                                               
-                                              
-                                              
-    text["payload"]["facebook"]["attachment"]["payload"]["buttons"] = main
+    if not main:
+        text = "Sorry we dont serve in your city yet!"
+    else:
+        text["payload"]["facebook"]["attachment"]["payload"]["buttons"] = main
     # return a fulfillment response
     return text
 		
