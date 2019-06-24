@@ -18,12 +18,12 @@ def results():
     
     main = []
     j = mongo.db.Service_centers.find({})
-    for i in j['centers']:
-        city = i
-        dummy = {"type": "postback",
-        "payload": city,
-        "title": city}
-        main.append(dummy)    
+
+    city = j['centers'][0]
+    dummy = {"type": "postback",
+    "payload": city,
+    "title": city}
+    main.append(dummy)    
 
     # build a request object
     req = request.get_json()
