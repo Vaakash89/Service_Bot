@@ -16,6 +16,7 @@ mongo = PyMongo(app)
 
 def results():
     
+    req = request.get_json()  
     action = req["queryResult"]["queryText"]   
     
     main = []
@@ -28,7 +29,7 @@ def results():
             main.append(dummy)    
 
     # build a request object
-    req = request.get_json()
+
     # fetch action from json
 
     text = {
@@ -51,16 +52,8 @@ def results():
                                               
                                               
     text["payload"]["facebook"]["attachment"]["payload"]["buttons"] = main
-     
-                                              
-    
-    if(action.lower() == "chennai" ):
-        res = text
-    else:
-        res = "Not Chennai"
-    
     # return a fulfillment response
-    return res
+    return text
 		
 # create a route for webhook
 @app.route('/', methods=['GET', 'POST'])
